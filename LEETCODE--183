@@ -1,0 +1,8 @@
+// Customers who didnt place the order...
+
+SELECT c.name AS Customers
+FROM Customers c
+LEFT JOIN Orders o
+ON o.customerId=c.id
+WHERE c.name NOT IN(SELECT c.name FROM Customers
+                    WHERE customerID IS NOT NULL);
