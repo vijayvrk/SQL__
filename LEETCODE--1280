@@ -1,0 +1,9 @@
+// Students and Examination----
+
+SELECT s.student_id, s.student_name, c.class_id, IFNULL(COUNT(e.exam_id), 0) AS attended_exams
+FROM Students s
+CROSS JOIN Classes c
+LEFT JOIN Examinations e 
+    ON s.student_id = e.student_id AND c.class_id = e.class_id
+GROUP BY s.student_id, c.class_id
+ORDER BY s.student_id, c.class_id;
