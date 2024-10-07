@@ -1,5 +1,5 @@
 // Students and Examination----
-
+ 
 SELECT s.student_id, s.student_name, c.subject_name, IFNULL(COUNT(e. subject_name), 0) AS attended_exams
 FROM Students s
 CROSS JOIN Subjects c
