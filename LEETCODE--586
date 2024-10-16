@@ -1,0 +1,7 @@
+// Customer with largest no.of orders
+
+SELECT customer_number
+FROM Orders
+GROUP BY customer_number
+ORDER BY COUNT(order_number) DESC, customer_number ASC
+LIMIT 1;
