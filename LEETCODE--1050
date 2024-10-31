@@ -1,6 +1,6 @@
 // ACTORS AND DIRECTORS WHO HAVE COOPERATED
 
-SELECT actor_id,director_id
+SELECT actor_id,director_id 
 FROM ActorDirector
 GROUP BY actor_id,director_id
 HAVING COUNT(*) >2;
